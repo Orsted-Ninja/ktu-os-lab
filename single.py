@@ -11,7 +11,7 @@ from sklearn.preprocessing import StandardScaler
 df=datasets.load_diabetes()
 dp=pd.DataFrame(df.data,columns=df.feature_names)
 dp['target']=df.target
-X=np.array(dp['bmi']).reshape(-1,1)
+X=np.array(dp['bmi']).reshape(-1,1)#check if dropping target changes anything
 y=np.array(dp['target'])
 sns.lmplot(x='bmi',y='target',ci=None,data=dp)
 sc=StandardScaler()
